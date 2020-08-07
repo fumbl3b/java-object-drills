@@ -50,14 +50,19 @@ function decode (word) {
   return decoded;
 }
 
-function decodeWords (string) {
-    let words = string.split(' ');
-    let truth = '';
-    words.forEach(function(word){
-        truth += decode(word);
-    });
-    return truth;
+function decode2(word) {
+  return word[cipher[word[0]] - 1];
 }
 
+function decodeWords (string) {
+  let words = string.split(' ');
+  let truth = '';
+  words.forEach(function(word){
+    truth += decode(word);
+  });
+  return truth;
+}
+console.log(decode('cycle'));
+console.log(decode2('cycle'));
 console.log(decodeWords('cycle basket cycle veranda cycle'));
 
